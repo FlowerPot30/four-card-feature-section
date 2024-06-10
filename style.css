@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+  --clr-blue: hsl(212, 86%, 64%);
+
+  --clr-very-dark-blue: hsl(234, 12%, 34%);
+  --clr-grayish-blue: hsl(229, 6%, 66%);
+  --clr-very-light-gray: hsl(0, 0%, 98%);
+
+  --fnt-poppins: "Poppins";
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: var(--fnt-poppins);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 3.6rem;
+  font-weight: 200;
+}
+
+h2 {
+  color: var(--clr-very-dark-blue);
+}
+
+p {
+  color: var(--clr-grayish-blue);
+}
+
+.container {
+  margin: 9rem 0;
+  padding-inline: 3.2rem;
+  display: grid;
+  justify-content: center;
+}
+
+header {
+  display: block;
+  margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.powerby {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: var(--clr-very-dark-blue);
+  margin-bottom: 1.8rem;
+}
+
+.header-message {
+  color: var(--clr-grayish-blue);
+  text-align: center;
+  max-width: 50.5rem;
+}
+
+.section-wrap {
+  display: grid;
+  justify-content: center;
+  gap: 2.6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-wrap {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.section {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1.5rem 2rem 0.05rem rgba(177, 177, 177, 0.5);
+  width: 31.1rem;
+  height: 22.2rem;
+  border-radius: 1rem;
+  padding: 2.8rem;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 98%;
+}
+
+.section img {
+  position: absolute;
+  bottom: 2.8rem;
+  right: 2.8rem;
+}
+
+.section h2 {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.section p {
+  font-size: 1.35rem;
+  font-weight: 200;
+}
+
+#supervisor::before {
+  background-color: var(--clr-cyan);
+}
+
+#team-builder::before {
+  background-color: var(--clr-red);
+}
+
+#karma::before {
+  background-color: var(--clr-orange);
+}
+
+#calculator::before {
+  background-color: var(--clr-blue);
+}
+
+@media (min-width: 1024px) {
+  #supervisor {
+    grid-row: span 2;
+  }
+
+  #karma {
+    order: 4;
+    grid-column: 2;
+  }
+
+  #calculator {
+    grid-row: span 2;
+  }
+}
